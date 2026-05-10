@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato — FEED Editora</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero { background: var(--verde-noite); padding: 60px 0; text-align: center; }
+    .page-hero h1 { font-family: var(--fonte-titulo); font-size: clamp(32px,4vw,48px); color: var(--branco); font-weight: 500; margin-bottom: 12px; }
+    .page-hero p { color: rgba(255,255,255,0.65); font-size: 17px; }
+
+    .contato-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; padding: 60px 0 80px; align-items: start; }
+    .info-card { background: var(--branco); border: 0.5px solid #E8E5DE; border-radius: var(--raio-grande); padding: 32px; }
+    .info-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 0.5px solid #F0EDE6; }
+    .info-item:last-child { border-bottom: none; }
+    .info-icone { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .info-label { font-size: 11px; font-weight: 500; color: var(--esmeralda); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px; }
+    .info-valor { font-size: 14px; color: var(--preto); }
+
+    .form-contato { background: var(--branco); border: 0.5px solid #E8E5DE; border-radius: var(--raio-grande); padding: 40px; }
+    .form-grupo { margin-bottom: 20px; }
+    .form-grupo label { display: block; font-size: 13px; font-weight: 500; color: var(--verde-noite); margin-bottom: 6px; }
+    .form-grupo input,
+    .form-grupo select,
+    .form-grupo textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #D0CCC4;
+      border-radius: var(--raio);
+      font-family: var(--fonte-texto);
+      font-size: 15px;
+      color: var(--preto);
+      background: var(--off-white);
+      transition: border-color 0.2s;
+    }
+    .form-grupo input:focus,
+    .form-grupo select:focus,
+    .form-grupo textarea:focus { outline: none; border-color: var(--esmeralda); }
+    .form-grupo textarea { height: 140px; resize: vertical; }
+    .form-linha { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    @media (max-width: 768px) {
+      .contato-grid { grid-template-columns: 1fr; }
+      .form-linha { grid-template-columns: 1fr; }
+      .form-contato { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">
+          <div class="logo-icone">F</div>
+          <div><div class="logo-nome">FEED</div><div class="logo-sub">Editora</div></div>
+        </a>
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="autores.html">Seja um Autor</a></li>
+          <li><a href="contato.html" class="ativo">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="tag">Fale conosco</span>
+      <h1>Contato</h1>
+      <p>Estamos à disposição para autores, leitores e parceiros.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="contato-grid">
+
+      <div>
+        <div class="info-card">
+          <div class="info-item">
+            <div class="info-icone">✉️</div>
+            <div>
+              <div class="info-label">E-mail</div>
+              <div class="info-valor">contato@feededitora.com.br</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icone">📱</div>
+            <div>
+              <div class="info-label">Instagram</div>
+              <div class="info-valor">@feededitora</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icone">💼</div>
+            <div>
+              <div class="info-label">LinkedIn</div>
+              <div class="info-valor">FEED Editora</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icone">⏱️</div>
+            <div>
+              <div class="info-label">Tempo de resposta</div>
+              <div class="info-valor">Até 2 dias úteis</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-contato">
+        <h3 style="font-family:var(--fonte-titulo);font-size:22px;font-weight:500;color:var(--verde-noite);margin-bottom:24px;">Envie uma mensagem</h3>
+        <div class="form-linha">
+          <div class="form-grupo">
+            <label>Nome</label>
+            <input type="text" placeholder="Seu nome">
+          </div>
+          <div class="form-grupo">
+            <label>E-mail</label>
+            <input type="email" placeholder="seu@email.com">
+          </div>
+        </div>
+        <div class="form-grupo">
+          <label>Assunto</label>
+          <select>
+            <option value="">Selecione...</option>
+            <option>Quero publicar um livro</option>
+            <option>Dúvida sobre um título</option>
+            <option>Parceria institucional</option>
+            <option>Imprensa</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="form-grupo">
+          <label>Mensagem</label>
+          <textarea placeholder="Como podemos ajudar?"></textarea>
+        </div>
+        <button class="botao botao-primario" style="width:100%;">Enviar mensagem</button>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom:12px;">
+            <div class="logo-icone">F</div>
+            <div><div class="logo-nome">FEED</div><div class="logo-sub">Editora</div></div>
+          </a>
+        </div>
+        <div>
+          <div class="footer-titulo">Navegação</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="autores.html">Seja um Autor</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-titulo">Contato</div>
+          <ul class="footer-links">
+            <li><a href="mailto:contato@feededitora.com.br">contato@feededitora.com.br</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© 2025 FEED Editora.</span></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

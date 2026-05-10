@@ -1,0 +1,246 @@
+/* =============================================
+   FEED EDITORA — style.css
+   Arquivo principal de estilos
+   ============================================= */
+
+/* --- 1. FONTES DO GOOGLE --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* --- 2. VARIÁVEIS (cores, fontes, etc.) --- */
+:root {
+  --verde-noite:   #0F2B1F;
+  --esmeralda:     #1D9E75;
+  --verde-claro:   #5DCAA5;
+  --menta:         #E1F5EE;
+  --dourado:       #C9A84C;
+  --preto:         #1A1A1A;
+  --off-white:     #F7F5F0;
+  --cinza-texto:   #555550;
+  --branco:        #FFFFFF;
+
+  --fonte-titulo:  'Playfair Display', serif;
+  --fonte-texto:   'DM Sans', sans-serif;
+
+  --raio:          8px;
+  --raio-grande:   16px;
+  --sombra:        0 4px 24px rgba(15, 43, 31, 0.10);
+}
+
+/* --- 3. RESET BÁSICO --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* rolagem suave ao clicar em links âncora */
+}
+
+body {
+  font-family: var(--fonte-texto);
+  background-color: var(--off-white);
+  color: var(--preto);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* --- 4. UTILITÁRIOS --- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.secao {
+  padding: 80px 0;
+}
+
+.secao-cinza {
+  background-color: var(--branco);
+}
+
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--esmeralda);
+  background: var(--menta);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.botao {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: var(--raio);
+  font-family: var(--fonte-texto);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.botao-primario {
+  background: var(--esmeralda);
+  color: var(--branco);
+}
+
+.botao-primario:hover {
+  background: var(--verde-noite);
+}
+
+.botao-secundario {
+  background: transparent;
+  color: var(--esmeralda);
+  border: 1.5px solid var(--esmeralda);
+}
+
+.botao-secundario:hover {
+  background: var(--menta);
+}
+
+/* --- 5. CABEÇALHO (navbar) --- */
+header {
+  background: var(--verde-noite);
+  padding: 20px 0;
+  position: sticky; /* fica fixo no topo ao rolar */
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icone {
+  width: 36px;
+  height: 36px;
+  background: var(--esmeralda);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fonte-titulo);
+  font-size: 18px;
+  color: var(--branco);
+  font-weight: 700;
+}
+
+.logo-nome {
+  font-family: var(--fonte-titulo);
+  font-size: 22px;
+  color: var(--branco);
+  letter-spacing: 0.15em;
+}
+
+.logo-sub {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--verde-claro);
+}
+
+.menu {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.menu a {
+  color: rgba(255,255,255,0.75);
+  font-size: 14px;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.menu a:hover,
+.menu a.ativo {
+  color: var(--verde-claro);
+}
+
+/* --- 6. RODAPÉ --- */
+footer {
+  background: var(--verde-noite);
+  color: rgba(255,255,255,0.6);
+  padding: 48px 0 32px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-titulo {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--verde-claro);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--verde-claro);
+}
+
+.footer-bottom {
+  border-top: 0.5px solid rgba(255,255,255,0.1);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+/* --- 7. RESPONSIVO (celular) --- */
+@media (max-width: 768px) {
+
+  .menu {
+    display: none; /* esconde menu no celular — depois adicionamos hamburguer */
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .secao {
+    padding: 48px 0;
+  }
+}
